@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel Livewire') }}</title>
 
     <!-- Scripts -->
+    @livewireStyles
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
@@ -23,5 +24,6 @@
         @include('includes.footer')
     </div>
 </div>
+@livewireScripts
 </body>
 </html>
