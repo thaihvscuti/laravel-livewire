@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Contract extends Model
+class Space extends Model
 {
     use HasFactory, SoftDeletes;
     /**
@@ -14,7 +14,7 @@ class Contract extends Model
      *
      * @var string
      */
-    protected $table = 'contracts';
+    protected $table = 'spaces';
 
     /**
      * The "type" of the auto-incrementing ID.
@@ -26,5 +26,6 @@ class Contract extends Model
     /**
      * @var array
      */
-    protected $fillable = ['contract_name', 'description', 'created_at', 'updated_at', 'deleted_at'];
+    protected $fillable = ['contract_id', 'building_name', 'project_name', 'floor_name', 'room_name', 'created_at', 'updated_at', 'deleted_at'];
+
 }

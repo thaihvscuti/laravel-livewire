@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('contracts', function (Blueprint $table) {
+        Schema::create('spaces', function (Blueprint $table) {
             $table->id();
-            $table->string('contract_name');
-            $table->text('description')->nullable();
+            $table->bigInteger('contract_id');
+            $table->string('building_name', 255);
+            $table->string('project_name', 255);
+            $table->string('floor_name', 255);
+            $table->string('room_name', 255);
             $table->timestamps();
             $table->softDeletes();
         });
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('contracts');
+        Schema::dropIfExists('spaces');
     }
 };
