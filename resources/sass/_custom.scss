@@ -3,3 +3,15 @@ html:not([dir=rtl]) {
         padding-left: var(--cui-sidebar-occupy-start,0);
     }
 }
+.paginator__container {
+    nav {
+        ul {
+            justify-content: end;
+            li {
+                a {
+                    color: #000;
+                }
+            }
+        }
+    }
+}

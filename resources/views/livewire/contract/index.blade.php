@@ -6,53 +6,44 @@
             </div>
         </div>
         <div class="col-12">
-            <table class="table table-striped table-bordered">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Created at</th>
-                    <th scope="col">Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td scope="row">1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-coreui-toggle="dropdown" aria-expanded="false">
-                                Action
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rotate me-2"></i>Update</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-trash-can me-2"></i>Delete</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-coreui-toggle="dropdown" aria-expanded="false">
-                                Action
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rotate me-2"></i>Update</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa-regular fa-trash-can me-2"></i>Delete</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+            @if(!empty($contracts))
+                <div class="paginator__container text-end">
+                    {!! $contracts->links() !!}
+                </div>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Created at</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($contracts as $contract)
+                        <tr>
+                            <td>{{ $contract->contract_name }}</td>
+                            <td>{{ $contract->description }}</td>
+                            <td>{{ date('Y-m-d H:i', strtotime($contract->created_at)) }}</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-outline-primary dropdown-toggle" data-coreui-toggle="dropdown" aria-expanded="false">
+                                        Action
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rotate me-2"></i>Update</a></li>
+                                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-trash-can me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+                <div class="paginator__container text-end">
+                    {!! $contracts->links() !!}
+                </div>
+            @endif
         </div>
     </div>
 </div>
