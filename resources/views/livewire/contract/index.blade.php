@@ -22,7 +22,7 @@
                         </thead>
                         <tbody>
                         @foreach($contracts as $contract)
-                            <tr>
+                            <tr wire:key="{{ $contract->id }}">
                                 <td>{{ $contract->contract_name }}</td>
                                 <td>{{ $contract->description }}</td>
                                 <td>{{ date('Y-m-d H:i', strtotime($contract->created_at)) }}</td>

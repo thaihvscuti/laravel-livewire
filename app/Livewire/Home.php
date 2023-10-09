@@ -8,9 +8,9 @@ class Home extends Component
 {
     public function render()
     {
-        $breadcrumbs = 'Home';
-        return view('livewire.home', [
-            'breadcrumbs' => $breadcrumbs,
-        ]);
+        $breadcrumbs = ['Home'];
+        return view('livewire.home')
+            ->layoutData(['breadcrumbs' => $breadcrumbs])
+            ->title('Home');
     }
 }

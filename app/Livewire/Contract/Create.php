@@ -13,7 +13,16 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.contract.create');
+        $breadcrumbs = [
+            [
+                'url' => route('contract.index'),
+                'name' => 'Contract'
+            ],
+            'Create'
+        ];
+        return view('livewire.contract.create')
+            ->title('Contract create')
+            ->layoutData(['breadcrumbs' => $breadcrumbs]);
     }
 
     public function rules()

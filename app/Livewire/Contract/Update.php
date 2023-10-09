@@ -21,7 +21,16 @@ class Update extends Component
 
     public function render()
     {
-        return view('livewire.contract.update');
+        $breadcrumbs = [
+            [
+                'url' => route('contract.index'),
+                'name' => 'Contract'
+            ],
+            'Update'
+        ];
+        return view('livewire.contract.update')
+            ->title('Contract update')
+            ->layoutData(['breadcrumbs' => $breadcrumbs]);
     }
 
     public function rules()
