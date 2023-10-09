@@ -32,7 +32,7 @@
                                     </button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="{{ route('contract.edit', ['id' => $contract->id]) }}"><i class="fa-solid fa-pen me-2"></i>Edit</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="fa-regular fa-trash-can me-2"></i>Delete</a></li>
+                                        <li><button class="dropdown-item" wire:click="delete({{$contract->id}})"><i class="fa-regular fa-trash-can me-2"></i>Delete</button></li>
                                     </ul>
                                 </div>
                             </td>

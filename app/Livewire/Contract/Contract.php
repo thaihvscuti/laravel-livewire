@@ -5,8 +5,11 @@ namespace App\Livewire\Contract;
 use App\Models\Contract as ContractModel;
 use Livewire\Component;
 
-class Index extends Component
+class Contract extends Component
 {
+    protected $listeners = ['delete'];
+
+    public $deleteId = '';
     public function render()
     {
         $contracts = new ContractModel();
@@ -16,5 +19,22 @@ class Index extends Component
             ->with([
                 'contracts' => $contracts
             ]);
+    }
+
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function deleteId($id)
+    {
+        $this->deleteId = $id;
+    }
+
+    public function delete($id)
+    {
+        $contract = ContractModel::findOrFail($id);
+        $contract->delete();
+        return redirect()->to('/contract');
     }
 }
