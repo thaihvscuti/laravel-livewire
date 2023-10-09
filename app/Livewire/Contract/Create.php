@@ -5,7 +5,7 @@ namespace App\Livewire\Contract;
 use App\Models\Contract;
 use Livewire\Component;
 
-class Form extends Component
+class Create extends Component
 {
     public $contract_name = '';
 
@@ -13,7 +13,7 @@ class Form extends Component
 
     public function render()
     {
-        return view('livewire.contract.form')
+        return view('livewire.contract.create')
             ->slot('content');
     }
 

@@ -31,7 +31,7 @@
                                         Action
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#"><i class="fa-solid fa-rotate me-2"></i>Update</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('contract.edit', $contract->id) }}"><i class="fa-solid fa-pen me-2"></i>Edit</a></li>
                                         <li><a class="dropdown-item" href="#"><i class="fa-regular fa-trash-can me-2"></i>Delete</a></li>
                                     </ul>
                                 </div>
