@@ -11,7 +11,10 @@
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control" id="description" rows="5" wire:model="description"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <div class="action">
+                    <a href="{{ route('contract.index') }}" class="btn btn-secondary">Back</a>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
             </form>
         </div>
     </div>

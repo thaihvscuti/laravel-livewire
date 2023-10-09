@@ -6,7 +6,8 @@
             </svg>
         </button>
         <ul class="header-nav ms-3">
-            <li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown">
+                <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     <div class="avatar avatar-md"><img class="avatar-img" src="{{ asset('assets/img/avatars/8.jpg') }}" alt="{{ Auth::user()->email }}"></div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end pt-0">
@@ -30,7 +31,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb my-0 ms-2">
                 <li class="breadcrumb-item">
-                    <span>Home</span>
+                    <a href="{{ route('contract.index') }}"><span>Home</span></a>
                 </li>
                 <li class="breadcrumb-item active">
                     <span>Contract</span>
