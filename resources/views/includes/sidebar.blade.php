@@ -4,17 +4,10 @@
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{ route('contract.index') }}">
                 <svg class="nav-icon">
-                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
+                    <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-speedometer') }}"></use>
                 </svg> Contract
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">
-                <svg class="nav-icon">
-                    <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
-                </svg> Space
             </a>
         </li>
     </ul>

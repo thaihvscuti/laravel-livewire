@@ -30,6 +30,7 @@ class Contract extends Model
     protected $fillable = ['contract_name', 'description', 'created_at', 'updated_at', 'deleted_at'];
 
     public $sortable = [
+        'id',
         'contract_name',
         'description',
         'created_at',

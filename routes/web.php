@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContractController;
 use App\Http\Controllers\HomeController;
-use App\Livewire\Contract;
+use App\Livewire\Contract\Index;
+use Illuminate\Support\Facades\Route;
+use App\Livewire\Contract\Form;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,5 @@ use App\Livewire\Contract;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/contract', Contract::class);
+Route::get('/contract', Index::class)->name('contract.index');
+Route::get('/contract/create', Form::class)->name('contract.create');

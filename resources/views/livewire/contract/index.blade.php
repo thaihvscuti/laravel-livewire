@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 mb-2">
             <div class="text-end">
-                <a href="#" type="button" class="btn btn-primary">Add new <i class="fa-solid fa-plus"></i></a>
+                <a href="{{ route('contract.create') }}" type="button" class="btn btn-primary">Add new <i class="fa-solid fa-plus"></i></a>
             </div>
         </div>
         <div class="col-12">
@@ -15,7 +15,7 @@
                     <tr>
                         <th scope="col">@sortablelink('contract_name', 'Name')</th>
                         <th scope="col">@sortablelink('contract_name', 'Description')</th>
-                        <th scope="col">@sortablelink('created_at', 'Created at') at</th>
+                        <th scope="col">@sortablelink('created_at', 'Created at')</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>

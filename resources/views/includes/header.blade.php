@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
             <svg class="icon icon-lg">
-                <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+                <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-menu') }}"></use>
             </svg>
         </button>
         <ul class="header-nav ms-3">
@@ -15,7 +15,7 @@
                        onclick="event.preventDefault();document.getElementById('logout-form').submit();"
                     >
                         <svg class="icon me-2">
-                            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+                            <use xlink:href="{{ asset('vendors/@coreui/icons/svg/free.svg#cil-account-logout') }}"></use>
                         </svg> Logout
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
