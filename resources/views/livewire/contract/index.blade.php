@@ -20,9 +20,9 @@
                     <table class="table table-striped table-bordered">
                         <thead>
                         <tr>
-                            <th scope="col">@sortablelink('contract_name', 'Name')</th>
-                            <th scope="col">@sortablelink('contract_name', 'Description')</th>
-                            <th scope="col">@sortablelink('created_at', 'Created at')</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Created at</th>
                             <th scope="col" width="150px"></th>
                         </tr>
                         </thead>

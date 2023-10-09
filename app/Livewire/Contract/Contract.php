@@ -21,7 +21,7 @@ class Contract extends Component
         $contracts = new ContractModel();
         $contracts = $contracts->where('contract_name', 'like', '%'.$this->search.'%')
             ->orWhere('description', 'like', '%'.$this->search.'%')
-            ->sortable(['id' => 'desc'])
+            ->orderBy('created_at', 'desc')
             ->paginate(20);
         return view('livewire.contract.index', [
             'contracts' => $contracts
@@ -40,7 +40,7 @@ class Contract extends Component
     protected function queryString()
     {
         return [
-            'search'
+            'search',
         ];
     }
 }
