@@ -21,8 +21,7 @@ class Update extends Component
 
     public function render()
     {
-        return view('livewire.contract.update')
-            ->slot('content');
+        return view('livewire.contract.update');
     }
 
     public function rules()
@@ -45,6 +44,6 @@ class Update extends Component
         $this->contract->contract_name = $this->contract_name;
         $this->contract->description = $this->description;
         $this->contract->update();
-        return $this->redirect('/contract', navigate: true);
+        return redirect()->to('/contract');
     }
 }

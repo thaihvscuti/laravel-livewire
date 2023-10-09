@@ -30,12 +30,15 @@
     <div class="container-fluid">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb my-0 ms-2">
-                <li class="breadcrumb-item">
-                    <a href="{{ route('contract.index') }}"><span>Home</span></a>
-                </li>
-                <li class="breadcrumb-item active">
-                    <span>Contract</span>
-                </li>
+                @if (isset($breadcrumbs))
+                    @foreach ($breadcrumbs as $key => $breadcrumb)
+                        @if ($key != count($breadcrumbs) - 1)
+                            <li class="breadcrumb-item"><a href="{{ $breadcrumb['url'] }}">{{ $breadcrumb['name'] }}</a></li>
+                        @else
+                            <li class="breadcrumb-item active">{{ $breadcrumb }}</li>
+                        @endif
+                    @endforeach
+                @endif
             </ol>
         </nav>
     </div>

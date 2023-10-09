@@ -13,8 +13,7 @@ class Create extends Component
 
     public function render()
     {
-        return view('livewire.contract.create')
-            ->slot('content');
+        return view('livewire.contract.create');
     }
 
     public function rules()
@@ -37,6 +36,6 @@ class Create extends Component
         $contract->contract_name = $this->contract_name;
         $contract->description = $this->description;
         $contract->save();
-        return $this->redirect('/contract', navigate: true);
+        return redirect()->to('/contract');
     }
 }

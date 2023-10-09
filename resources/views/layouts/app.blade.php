@@ -21,7 +21,7 @@
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
         @include('includes.header')
         <div class="body flex-grow-1 px-3">
-            {{ $content }}
+            {{ $slot }}
         </div>
         @include('includes.footer')
     </div>

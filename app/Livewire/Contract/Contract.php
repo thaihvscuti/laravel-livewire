@@ -13,17 +13,15 @@ class Contract extends Component
     {
         $contracts = new ContractModel();
         $contracts = $contracts->sortable(['id' => 'desc'])->paginate(20);
-        return view('livewire.contract.index')
-            ->slot('content')
-            ->with([
-                'contracts' => $contracts
-            ]);
+        return view('livewire.contract.index', [
+            'contracts' => $contracts
+        ]);
     }
 
     public function delete($id)
     {
         $contract = ContractModel::findOrFail($id);
         $contract->delete();
-        return $this->redirect('/contract', navigate: true);
+        return redirect()->to('/contract');
     }
 }

@@ -7,6 +7,7 @@ html:not([dir=rtl]) {
     nav {
         ul {
             justify-content: end;
+            flex-wrap: wrap;
             li {
                 a {
                     color: #000;
