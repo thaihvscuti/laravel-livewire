@@ -9,6 +9,8 @@
 
     <title>{{ config('app.name', 'Laravel Livewire') }}</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
     <!-- Scripts -->
     @livewireStyles
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -19,7 +21,7 @@
     <div class="wrapper d-flex flex-column min-vh-100 bg-light">
         @include('includes.header')
         <div class="body flex-grow-1 px-3">
-            @yield('content')
+            {{ $content }}
         </div>
         @include('includes.footer')
     </div>

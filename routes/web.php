@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContractController;
 use App\Http\Controllers\HomeController;
+use App\Livewire\Contract;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,4 +18,4 @@ use App\Http\Controllers\HomeController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::resource('contract', ContractController::class);
+Route::get('/contract', Contract::class);
