@@ -9,7 +9,6 @@ class Contract extends Component
 {
     protected $listeners = ['delete'];
 
-    public $deleteId = '';
     public function render()
     {
         $contracts = new ContractModel();
@@ -19,16 +18,6 @@ class Contract extends Component
             ->with([
                 'contracts' => $contracts
             ]);
-    }
-
-    /**
-     * Write code on Method
-     *
-     * @return response()
-     */
-    public function deleteId($id)
-    {
-        $this->deleteId = $id;
     }
 
     public function delete($id)
