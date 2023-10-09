@@ -24,6 +24,6 @@ class Contract extends Component
     {
         $contract = ContractModel::findOrFail($id);
         $contract->delete();
-        return redirect()->to('/contract');
+        return $this->redirect('/contract', navigate: true);
     }
 }

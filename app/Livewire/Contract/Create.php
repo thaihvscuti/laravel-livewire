@@ -37,6 +37,6 @@ class Create extends Component
         $contract->contract_name = $this->contract_name;
         $contract->description = $this->description;
         $contract->save();
-        return redirect()->to('/contract');
+        return $this->redirect('/contract', navigate: true);
     }
 }

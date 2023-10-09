@@ -45,6 +45,6 @@ class Update extends Component
         $this->contract->contract_name = $this->contract_name;
         $this->contract->description = $this->description;
         $this->contract->update();
-        return redirect()->to('/contract');
+        return $this->redirect('/contract', navigate: true);
     }
 }
