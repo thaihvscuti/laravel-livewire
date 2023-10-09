@@ -8,14 +8,14 @@
         <div class="col-12">
             @if(!empty($contracts))
                 <div class="paginator__container text-end">
-                    {!! $contracts->links() !!}
+                    {!! $contracts->appends(\Request::except('page'))->render() !!}
                 </div>
                 <table class="table table-striped table-bordered">
                     <thead>
                     <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Created at</th>
+                        <th scope="col">@sortablelink('contract_name', 'Name')</th>
+                        <th scope="col">@sortablelink('contract_name', 'Description')</th>
+                        <th scope="col">@sortablelink('created_at', 'Created at') at</th>
                         <th scope="col">Action</th>
                     </tr>
                     </thead>
@@ -41,7 +41,7 @@
                     </tbody>
                 </table>
                 <div class="paginator__container text-end">
-                    {!! $contracts->links() !!}
+                    {!! $contracts->appends(\Request::except('page'))->render() !!}
                 </div>
             @endif
         </div>

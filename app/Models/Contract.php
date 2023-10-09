@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Kyslik\ColumnSortable\Sortable;
 
 class Contract extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, Sortable;
     /**
      * The table associated with the model.
      *
@@ -27,4 +28,10 @@ class Contract extends Model
      * @var array
      */
     protected $fillable = ['contract_name', 'description', 'created_at', 'updated_at', 'deleted_at'];
+
+    public $sortable = [
+        'contract_name',
+        'description',
+        'created_at',
+    ];
 }

@@ -10,7 +10,8 @@ class Contract extends Component
     public function render()
     {
         $title = "Contract list";
-        $contracts = ContractModel::paginate(20);
+        $contracts = new ContractModel();
+        $contracts = $contracts->sortable('contract_name')->paginate(20);
         return view('livewire.contract.index')
             ->slot('content')
             ->with([
