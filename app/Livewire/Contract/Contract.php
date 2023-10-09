@@ -4,10 +4,14 @@ namespace App\Livewire\Contract;
 
 use App\Models\Contract as ContractModel;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Contract extends Component
 {
-    protected $listeners = ['delete'];
+    use WithPagination;
+
+    public $search = '';
+
 
     public function render()
     {
@@ -15,7 +19,10 @@ class Contract extends Component
             'Contract'
         ];
         $contracts = new ContractModel();
-        $contracts = $contracts->sortable(['id' => 'desc'])->paginate(20);
+        $contracts = $contracts->where('contract_name', 'like', '%'.$this->search.'%')
+            ->orWhere('description', 'like', '%'.$this->search.'%')
+            ->sortable(['id' => 'desc'])
+            ->paginate(20);
         return view('livewire.contract.index', [
             'contracts' => $contracts
         ])
@@ -28,5 +35,12 @@ class Contract extends Component
         $contract = ContractModel::findOrFail($id);
         $contract->delete();
         return redirect()->to('/contract');
+    }
+
+    protected function queryString()
+    {
+        return [
+            'search'
+        ];
     }
 }
