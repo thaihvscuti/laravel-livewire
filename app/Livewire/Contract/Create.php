@@ -7,14 +7,23 @@ use Livewire\Component;
 
 class Create extends Component
 {
-    public $contract_name = '';
+    public Contract $contract;
 
-    public $description = '';
+    public $contract_name;
+
+    public $description;
 
     public function render()
     {
         return view('livewire.contract.create')
             ->slot('content');
+    }
+
+    public function mount()
+    {
+        $this->contract = new Contract();
+        $this->contract_name = '';
+        $this->description = '';
     }
 
     public function rules()
@@ -33,10 +42,9 @@ class Create extends Component
 
     public function save() {
         $this->validate();
-        Contract::create([
-            'contract_name' => $this->contract_name,
-            'description' => $this->description,
-        ]);
+        $this->contract->contract_name = $this->contract_name;
+        $this->contract->description = $this->description;
+        $this->contract->save();
         return redirect()->to('/contract');
     }
 }
