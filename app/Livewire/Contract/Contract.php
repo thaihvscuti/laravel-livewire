@@ -12,6 +12,14 @@ class Contract extends Component
 
     public $search = '';
 
+    /**
+     *  Livewire Lifecycle Hook
+     */
+    public function updatingSearch(): void
+    {
+        $this->gotoPage(1);
+    }
+
 
     public function render()
     {
@@ -19,8 +27,8 @@ class Contract extends Component
             'Contract'
         ];
         $contracts = new ContractModel();
-        $contracts = $contracts->where('contract_name', 'like', '%'.$this->search.'%')
-            ->orWhere('description', 'like', '%'.$this->search.'%')
+        $contracts = $contracts->where('contract_name', 'like', '%'.trim($this->search).'%')
+            ->orWhere('description', 'like', '%'.trim($this->search).'%')
             ->orderBy('updated_at', 'desc')
             ->paginate(20);
         return view('livewire.contract.index', [
